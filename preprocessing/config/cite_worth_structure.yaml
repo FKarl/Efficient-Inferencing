@@ -1,0 +1,12 @@
+columns_to_keep: # order is also applied
+  - paper_index
+  - section_index  # to change context length in the future
+  - section_category
+  - text_index  # to keep order for context length
+  - text
+  - label
+  - split
+
+rename_columns:
+  # original_name: target_name
+  paper_id: paper_index

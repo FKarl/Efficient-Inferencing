@@ -1,0 +1,19 @@
+citeworth:
+  BERT: 145
+  mobileBERT: 145
+  ALBERT: 148
+  DeBERTa: 142
+  TinyBERT: 145
+  SciBERT: 137
+  DistilBERT: 145
+  DeBERTa_large: 132
+
+scisen:
+  BERT: 143
+  mobileBERT: 143
+  ALBERT: 151
+  DeBERTa: 141
+  TinyBERT: 143
+  SciBERT: 135
+  DistilBERT: 143
+  DeBERTa_large: 134

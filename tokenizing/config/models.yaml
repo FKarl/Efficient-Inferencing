@@ -1,0 +1,24 @@
+BERT:
+  model: "bert-base-uncased"
+  tokenizer: "bert-base-uncased"
+mobileBERT:
+  model: "google/mobilebert-uncased"
+  tokenizer: "google/mobilebert-uncased"
+ALBERT:
+  model: "albert-base-v2"
+  tokenizer: "albert-base-v2"
+DeBERTa:
+  model: "microsoft/deberta-base"
+  tokenizer: "microsoft/deberta-base"
+TinyBERT:
+  model: "prajjwal1/bert-tiny"
+  tokenizer: "prajjwal1/bert-tiny"
+SciBERT:
+  model: "allenai/scibert_scivocab_uncased"
+  tokenizer: "allenai/scibert_scivocab_uncased"
+DistilBERT:
+  model: "distilbert-base-uncased"
+  tokenizer: "distilbert-base-uncased"
+DeBERTa_large:
+  model: "microsoft/deberta-v2-xxlarge"
+  tokenizer: "microsoft/deberta-v2-xxlarge"

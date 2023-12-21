@@ -1,0 +1,196 @@
+ # This file has been copied from SciSen. All credit goes to them.
+ # Original file: https://github.com/JustinMuecke/SciSen/blob/main/sciSen/data/synonyms_extended.json"""
+
+abstract:
+- abstract
+analysis:
+- experiment
+background:
+- related work
+background and related work:
+- related work
+concluding remark:
+- conclusion
+conclusion:
+- conclusion
+conclusion and discussion:
+- conclusion
+- discussion
+conclusion and future direction:
+- conclusion
+conclusion and future work:
+- conclusion
+conclusion and limitation:
+- conclusion
+conclusion and outlook:
+- conclusion
+conclusion and perspective:
+- conclusion
+conclusion limitation and future work:
+- conclusion
+conclusions:
+- conclusion
+conclusions and future work:
+- conclusion
+current state of research:
+- related work
+discussion:
+- discussion
+discussion and conclusion:
+- conclusion
+- discussion
+discussion and conclusions:
+- conclusion
+- discussion
+discussion and future work:
+- discussion
+- conclusion
+discussion and outlook:
+- discussion
+- conclusion
+discussions:
+- discussion
+empirical result:
+- result
+evaluation:
+- experiment
+evaluation and result:
+- experiment
+- result
+evaluation methodology:
+- method
+- experiment
+experiment:
+- experiment
+experiment and result:
+- experiment
+- result
+experiment result:
+- experiment
+experimental design:
+- experiment
+experimental evaluation:
+- experiment
+experimental result:
+- result
+experimental results:
+- result
+experimental setup:
+- experiment
+experiments:
+- experiment
+experiments and results:
+- experiment
+- result
+future work:
+- conclusion
+- discussion
+future work and conclusion:
+- conclusion
+- discussion
+implementation:
+- experiment
+implementation detail:
+- experiment
+implementation details:
+- experiment
+intro:
+- introduction
+introduction:
+- introduction
+introduction and background:
+- introduction
+- related work
+introduction and motivation:
+- introduction
+introduction and related work:
+- introduction
+- related work
+limitation:
+- discussion
+limitations:
+- discussion
+literature:
+- related work
+literature review:
+- related work
+material and method:
+- method
+material and methods:
+- method
+method:
+- method
+methodology:
+- method
+methods:
+- method
+model:
+- method
+motivation:
+- introduction
+motivation and related work:
+- related work
+- introduction
+overview:
+- introduction
+performance evaluation:
+- experiment
+previous work:
+- related work
+problem motivation:
+- introduction
+procedure:
+- experiment
+proposed approach:
+- method
+proposed method:
+- method
+proposed methodology:
+- method
+related literature:
+- related work
+related work:
+- related work
+related work and background:
+- related work
+related work and conclusion:
+- conclusion
+- related work
+related works:
+- related work
+relation to prior work:
+- related work
+requirement:
+- related work
+result:
+- result
+result and analysis:
+- result
+result and discussion:
+- discussion
+- result
+result and evaluation:
+- experiment
+- result
+results:
+- result
+results and analysis:
+- result
+results and discussion:
+- discussion
+- result
+results and discussions:
+- discussion
+- result
+review of previous method:
+- related work
+state of the art:
+- related work
+summary:
+- conclusion
+summary and conclusion:
+- conclusion
+system model:
+- method
+technical background:
+- related work

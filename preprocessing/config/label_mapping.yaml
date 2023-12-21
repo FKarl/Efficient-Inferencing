@@ -1,0 +1,12 @@
+section_category:
+  conclusion: 0
+  related work: 1
+  introduction: 2
+  result: 3
+  discussion: 4
+  experiment: 5
+  method: 6
+
+label:
+  non-check-worthy: 0
+  check-worthy: 1
