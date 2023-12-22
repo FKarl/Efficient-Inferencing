@@ -20,9 +20,9 @@ OUTPUT_NAME_PLOT = "general_stats_plot_{}.png"  # "{}" in template is necessary 
 
 
 def get_datasets() -> Tuple[pd.DataFrame, pd.DataFrame]:
-    """Get preprocessed data from Pickle files.
+    """Retrieves the preprocessed CiteWorth and SciSen datasets from Pickle files.
 
-    :return: CiteWorth and SciSen dataset, in this particular order.
+    :return: A tuple containing the CiteWorth and SciSen datasets, respectively.
     """
     citeworth = read_pickle_file(data_source / "CiteWorth_preprocessed.pkl")
     scisen = read_pickle_file(data_source / "SciSen_preprocessed.pkl")
@@ -30,22 +30,40 @@ def get_datasets() -> Tuple[pd.DataFrame, pd.DataFrame]:
 
 
 def get_comparative_dataset_statistic(datasets: List[pd.DataFrame]):
-    """Generates general, comparative statistics for both datasets.
+    """Generates and returns general statistics comparing the provided datasets. This function calculates various
+    statistics like total sentences, average sentence length, and check-worthiness percentages.
 
-    :param datasets: Datasets to use (CiteWorth and SciSen) in a list.
-    :return: Stats object with .table containing the calculated statistics.
+    :param datasets: A list of datasets (expected to be CiteWorth and SciSen) for which to calculate statistics.
+    :return: A DataFrame containing the computed statistics for comparison.
     """
     datasets = {"CiteWorth": datasets[0],
                 "SciSen": datasets[1]}
 
     table = pd.DataFrame(columns=datasets.keys())
+
     def calc_stat(function2use):
+        """Applies a given function to each DataFrame in the datasets dictionary and returns the results.
+
+        :param function2use: A function that will be applied to each DataFrame.
+        :return: A dictionary with the same keys as the datasets and values computed by the function.
+        """
         return {ds_name: function2use(df) for ds_name, df in datasets.items()}
 
     def add_dict_to_table(column_name, data2add):
+        """Adds a new row to the global 'table' DataFrame using data from a dictionary.
+
+        :param column_name: The name of the new row (column header in the DataFrame).
+        :param data2add: A dictionary containing the data to be added as a new row in the table.
+        """
         table.loc[column_name] = data2add.values()
 
     def get_percentile(dict_with_values):
+        """
+        Calculates the percentile values for each key-value pair in the provided dictionary.
+
+        :param dict_with_values: A dictionary containing numerical values.
+        :return: A dictionary with the same keys and their corresponding percentile values.
+        """
         return {k: (value / sum(dict_with_values.values())) * 100 for k, value in dict_with_values.items()}
 
     size = calc_stat(len)
@@ -71,7 +89,14 @@ def get_comparative_dataset_statistic(datasets: List[pd.DataFrame]):
     save_dataframe_to_markdown(df_to_save, OUTPUT_PATH_TABLE / OUTPUT_NAME_TABLE_TEMPLATE.format("comparative_analysis"))
     return table
 
+
 def format_table_to_printable_output(df):
+    """Formats the data in a DataFrame for printable output. This function specifically formats numerical values
+    for consistent presentation.
+
+    :param df: The DataFrame to format.
+    :return: A formatted DataFrame with adjusted numerical values for printing.
+    """
     def converting_matrix(x):
         if isinstance(x, float):
             f"{x:.4f}"
@@ -86,11 +111,11 @@ def format_table_to_printable_output(df):
 
 
 def comparative_analysis(dataset1: pd.DataFrame, dataset2: pd.DataFrame) -> None:
-    """
-    Perform a visual comparative analysis between two datasets.
+    """Performs and visualizes a comparative analysis between two datasets. This includes creating plots for the
+    distribution of section categories, labels, and the number of texts per section.
 
-    :param dataset1: First dataset for comparison
-    :param dataset2: Second dataset for comparison
+    :param dataset1: The first dataset for comparison (e.g., CiteWorth).
+    :param dataset2: The second dataset for comparison (e.g., SciSen).
     """
     # Adding 'dataset' column to distinguish datasets in plots
     dataset1 = dataset1.copy()

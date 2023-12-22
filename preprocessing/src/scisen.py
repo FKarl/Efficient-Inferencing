@@ -12,6 +12,12 @@ datasets_path = Path.cwd().parent.parent / "datasets"
 
 
 def remove_invalid_sentences(list_of_sentences: list) -> list:
+    """Removes invalid sentences from a list. Specifically, it filters out sentences that are "[removed]"
+    and ensures that each sentence in the list is a string.
+
+    :param list_of_sentences: A list containing sentence strings.
+    :return: A list of sentences with invalid sentences removed.
+    """
     list_of_sentences = list(filter(lambda x: x != "[removed]", list_of_sentences))  # Remove "[removed]" entries.
     list_of_sentences = [sentence for sentence in list_of_sentences if isinstance(sentence, str)]  # Remove non Strings.
     return list_of_sentences
@@ -61,18 +67,23 @@ def label_sentences(column_with_text: pd.Series) -> pd.Series:
 
 
 def remove_citation_token(column_with_tokens: pd.Series) -> pd.Series:
-    """Remove the "<citation>" tokens from each string in the column.
+    """Removes "<citation>" tokens from each string in a pandas Series. This is typically used to ensure
+    that the model does not learn to detect the token, but rather focuses on grammatical characteristics.
 
-    The idea behind this is, that the model does not learn to detect the token, but rather grammar characteristics.
-
-    :param column_with_tokens: Column that contains Strings with potentially "<citation>"-tokens.
-    :return: Column of Strings without token in them.
+    :param column_with_tokens: A pandas Series containing strings that may include "<citation>" tokens.
+    :return: A pandas Series with the "<citation>" token removed from all strings.
     """
     updated_series = column_with_tokens.str.replace("<citation>", "")
     return updated_series
 
 
 def main(recompile_dataset: bool):
+    """Main function to process and prepare the dataset. If recompile_dataset is True, it reads and processes
+    the raw dataset, otherwise, it loads the preprocessed dataset. Finally, it prints a markdown sample
+    of the dataset.
+
+    :param recompile_dataset: A boolean flag. If True, the dataset is recompiled from the raw data.
+    """
     if recompile_dataset:
         dataset_path = datasets_path / "SciSections_sentences.jsonl"
         scisen_raw = read_json_file(dataset_path)
